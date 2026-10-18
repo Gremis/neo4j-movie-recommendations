@@ -96,3 +96,54 @@ ainda não avaliado.
 A validação local e os cinco testes passaram. Uma segunda geração produziu
 conteúdo idêntico nos oito arquivos. Os testes usam diretórios temporários e
 não modificam os CSVs do projeto. Nenhum dado foi importado no Aura nesta etapa.
+
+## Importar o dataset
+
+Depois de configurar o `.env` e criar o schema, execute na raiz do projeto:
+
+```sh
+.venv/bin/python scripts/import_dataset.py
+```
+
+O script reutiliza o validador para conferir todo o dataset antes de qualquer
+escrita. Os CSVs são lidos localmente pelo Python em UTF-8; `released` é convertido
+para inteiro e `rating` para float. As linhas são enviadas como parâmetros para
+`UNWIND $rows`, sem necessidade de `LOAD CSV`, hospedagem dos arquivos ou acesso
+do servidor Aura ao sistema de arquivos local.
+
+As oito consultas em `cypher/import/` são executadas individualmente, primeiro
+as entidades e depois os relacionamentos, em uma única transação gerenciada
+com `session.execute_write()` no banco configurado. Os resultados são consumidos
+dentro da transação; o sucesso só é informado após sua confirmação. Uma falha
+durante a carga reverte as escritas da transação.
+
+`MERGE` identifica entidades pelas chaves únicas e relacionamentos pelos pares
+de nós; `SET` atualiza as demais propriedades, incluindo a nota de `RATED`.
+Assim, a importação pode ser repetida sem duplicar os dados do projeto. Não há
+exclusão de dados nem recriação de constraints.
+
+## Verificar a importação
+
+```sh
+.venv/bin/python scripts/verify_import.py
+```
+
+O script valida os CSVs locais e usa uma transação de leitura no banco configurado
+para comparar entidades, propriedades, relacionamentos e notas. O resumo mostra
+itens ausentes, duplicados, valores divergentes e relacionamentos inesperados.
+Retorna código 0 quando tudo confere e código 1 em caso de divergência ou falha.
+
+O escopo são as chaves das entidades presentes nos CSVs e os quatro tipos de
+relacionamento entre essas entidades, nas direções documentadas. Outros nós e
+relacionamentos fora desse escopo, assim como propriedades adicionais, não
+interferem na verificação. Nenhum dado é alterado.
+
+### Validação real no Aura
+
+O usuário executou a importação e a verificação no Aura, confirmando 30 filmes,
+20 pessoas, 8 gêneros e 15 usuários, além de 60 atuações, 30 direções,
+45 associações de gênero e 120 avaliações.
+
+O `verify_import.py` passou antes e depois de repetir a importação. Nenhuma
+ausência, duplicação ou divergência foi encontrada, confirmando a idempotência
+da carga no cenário verificado pelo usuário.
