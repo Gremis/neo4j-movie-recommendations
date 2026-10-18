@@ -53,3 +53,46 @@ e deverão ser validadas pelos fluxos de escrita de dados.
 
 O usuário executou `scripts/create_schema.py` duas vezes no Aura, ambas com
 sucesso.
+
+## Dataset sintético
+
+Os oito CSVs em `data/` são inteiramente fictícios, gerados localmente com a
+biblioteca padrão do Python. Não foram extraídos de pessoas, filmes ou avaliações
+reais. IDs e conteúdo são determinísticos, sem dependência de rede ou do Aura.
+Os arquivos usam UTF-8 e o módulo `csv` preserva acentos e vírgulas nos títulos.
+
+Execute na raiz do projeto:
+
+```sh
+.venv/bin/python scripts/generate_dataset.py
+.venv/bin/python scripts/validate_dataset.py
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+| Arquivo | Registros (sem cabeçalho) |
+| --- | ---: |
+| `data/movies.csv` | 30 |
+| `data/people.csv` | 20 |
+| `data/genres.csv` | 8 |
+| `data/users.csv` | 15 |
+| `data/acted_in.csv` | 60 |
+| `data/directed.csv` | 30 |
+| `data/movie_genres.csv` | 45 |
+| `data/ratings.csv` | 120 |
+
+Cada filme tem dois atores distintos, um diretor e um ou dois gêneros distintos.
+As mesmas pessoas podem atuar e dirigir. Cada usuário avalia oito filmes e deixa
+22 sem avaliar. Três grupos de cinco usuários compartilham quatro favoritos por
+grupo, com notas de 4 a 5, além de favoritos individuais que permitem recomendar
+filmes ainda não avaliados pelos colegas. Duas avaliações por usuário fora do
+bloco favorito recebem notas de 0 a 3.
+
+O validador confere cabeçalhos, campos obrigatórios, chaves, referências,
+duplicatas, anos inteiros, notas finitas de 0 a 5, quantidades e cobertura.
+Para a cobertura colaborativa, cada usuário deve compartilhar ao menos dois
+filmes com nota a partir de 4 com outro usuário e ter um favorito desse colega
+ainda não avaliado.
+
+A validação local e os cinco testes passaram. Uma segunda geração produziu
+conteúdo idêntico nos oito arquivos. Os testes usam diretórios temporários e
+não modificam os CSVs do projeto. Nenhum dado foi importado no Aura nesta etapa.
