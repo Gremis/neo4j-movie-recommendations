@@ -1,0 +1,27 @@
+[
+  {
+    "genre": "Aventura",
+    "average_rating": 4.5,
+    "rating_count": 6
+  },
+  {
+    "genre": "Fantasia",
+    "average_rating": 4.5,
+    "rating_count": 1
+  },
+  {
+    "genre": "Comédia",
+    "average_rating": 4.0,
+    "rating_count": 1
+  },
+  {
+    "genre": "Drama",
+    "average_rating": 2.0,
+    "rating_count": 3
+  },
+  {
+    "genre": "Animação",
+    "average_rating": 0.0,
+    "rating_count": 1
+  }
+]

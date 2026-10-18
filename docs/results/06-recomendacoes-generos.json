@@ -1,0 +1,50 @@
+[
+  {
+    "id": "movie_007",
+    "title": "Crônicas de Aurora, capítulo 7",
+    "score": 4.5,
+    "matched_genres": 1
+  },
+  {
+    "id": "movie_008",
+    "title": "Crônicas de Névoa, capítulo 8",
+    "score": 4.5,
+    "matched_genres": 1
+  },
+  {
+    "id": "movie_009",
+    "title": "Crônicas de Maré, capítulo 9",
+    "score": 4.5,
+    "matched_genres": 1
+  },
+  {
+    "id": "movie_010",
+    "title": "Crônicas de Órbita, capítulo 10",
+    "score": 4.5,
+    "matched_genres": 1
+  },
+  {
+    "id": "movie_015",
+    "title": "Crônicas de Maré, capítulo 15",
+    "score": 4.5,
+    "matched_genres": 1
+  },
+  {
+    "id": "movie_019",
+    "title": "Crônicas de Aurora, capítulo 19",
+    "score": 4.5,
+    "matched_genres": 1
+  },
+  {
+    "id": "movie_021",
+    "title": "Crônicas de Maré, capítulo 21",
+    "score": 4.5,
+    "matched_genres": 1
+  },
+  {
+    "id": "movie_017",
+    "title": "Crônicas de Memória, capítulo 17",
+    "score": 4.0,
+    "matched_genres": 1
+  }
+]

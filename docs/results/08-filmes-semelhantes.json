@@ -1,0 +1,52 @@
+[
+  {
+    "id": "movie_002",
+    "title": "Crônicas de Névoa, capítulo 2",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_003",
+    "title": "Crônicas de Maré, capítulo 3",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_004",
+    "title": "Crônicas de Órbita, capítulo 4",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_005",
+    "title": "Crônicas de Memória, capítulo 5",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_006",
+    "title": "Crônicas de Floresta, capítulo 6",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_007",
+    "title": "Crônicas de Aurora, capítulo 7",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_008",
+    "title": "Crônicas de Névoa, capítulo 8",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_009",
+    "title": "Crônicas de Maré, capítulo 9",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_010",
+    "title": "Crônicas de Órbita, capítulo 10",
+    "shared_genres": 1
+  },
+  {
+    "id": "movie_015",
+    "title": "Crônicas de Maré, capítulo 15",
+    "shared_genres": 1
+  }
+]

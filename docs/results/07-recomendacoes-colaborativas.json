@@ -1,0 +1,30 @@
+[
+  {
+    "id": "movie_007",
+    "title": "Crônicas de Aurora, capítulo 7",
+    "score": 9,
+    "supporting_users": 2,
+    "average_peer_rating": 4.75
+  },
+  {
+    "id": "movie_009",
+    "title": "Crônicas de Maré, capítulo 9",
+    "score": 8,
+    "supporting_users": 2,
+    "average_peer_rating": 4.5
+  },
+  {
+    "id": "movie_008",
+    "title": "Crônicas de Névoa, capítulo 8",
+    "score": 8,
+    "supporting_users": 2,
+    "average_peer_rating": 4.25
+  },
+  {
+    "id": "movie_010",
+    "title": "Crônicas de Órbita, capítulo 10",
+    "score": 4,
+    "supporting_users": 1,
+    "average_peer_rating": 4.5
+  }
+]

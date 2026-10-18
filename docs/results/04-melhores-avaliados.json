@@ -1,0 +1,62 @@
+[
+  {
+    "id": "movie_002",
+    "title": "Crônicas de Névoa, capítulo 2",
+    "average_rating": 4.142857142857142,
+    "rating_count": 7
+  },
+  {
+    "id": "movie_023",
+    "title": "Crônicas de Memória, capítulo 23",
+    "average_rating": 4.071428571428571,
+    "rating_count": 7
+  },
+  {
+    "id": "movie_014",
+    "title": "Crônicas de Névoa, capítulo 14",
+    "average_rating": 4.0,
+    "rating_count": 7
+  },
+  {
+    "id": "movie_001",
+    "title": "Crônicas de Aurora, capítulo 1",
+    "average_rating": 4.0,
+    "rating_count": 6
+  },
+  {
+    "id": "movie_006",
+    "title": "Crônicas de Floresta, capítulo 6",
+    "average_rating": 4.0,
+    "rating_count": 3
+  },
+  {
+    "id": "movie_022",
+    "title": "Crônicas de Órbita, capítulo 22",
+    "average_rating": 3.857142857142857,
+    "rating_count": 7
+  },
+  {
+    "id": "movie_021",
+    "title": "Crônicas de Maré, capítulo 21",
+    "average_rating": 3.8333333333333335,
+    "rating_count": 6
+  },
+  {
+    "id": "movie_013",
+    "title": "Crônicas de Aurora, capítulo 13",
+    "average_rating": 3.7857142857142856,
+    "rating_count": 7
+  },
+  {
+    "id": "movie_011",
+    "title": "Crônicas de Memória, capítulo 11",
+    "average_rating": 3.6666666666666665,
+    "rating_count": 6
+  },
+  {
+    "id": "movie_026",
+    "title": "Crônicas de Névoa, capítulo 26",
+    "average_rating": 3.6666666666666665,
+    "rating_count": 3
+  }
+]

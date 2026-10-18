@@ -1,0 +1,26 @@
+[
+  {
+    "nodes": [
+      {
+        "name": "Pessoa Fictícia 01",
+        "id": "person_001",
+        "title": null
+      },
+      {
+        "name": null,
+        "id": "movie_001",
+        "title": "Crônicas de Aurora, capítulo 1"
+      },
+      {
+        "name": "Pessoa Fictícia 08",
+        "id": "person_008",
+        "title": null
+      }
+    ],
+    "relationship_types": [
+      "ACTED_IN",
+      "ACTED_IN"
+    ],
+    "hops": 2
+  }
+]

@@ -147,3 +147,29 @@ O usuário executou a importação e a verificação no Aura, confirmando 30 fil
 O `verify_import.py` passou antes e depois de repetir a importação. Nenhuma
 ausência, duplicação ou divergência foi encontrada, confirmando a idempotência
 da carga no cenário verificado pelo usuário.
+
+## Consultas de negócio
+
+As dez consultas em `cypher/queries/` cobrem catálogo, filmografias, avaliações,
+preferências, recomendações por gênero e colaborativas, semelhança entre filmes,
+pares de atores e caminhos entre pessoas. São consultas somente de leitura.
+
+Execute pelo identificador, passando os parâmetros como objeto JSON:
+
+```sh
+.venv/bin/python scripts/run_query.py 01 --params '{"genre_name":"Aventura","limit":10}'
+```
+
+O executor valida parâmetros, usa o banco do `.env` e imprime JSON. Para também
+exportar em UTF-8, acrescente `--output /tmp/resultado.json`. Consulte as perguntas,
+pontuações e exemplos completos em [docs/queries.md](docs/queries.md).
+As dez consultas foram executadas com sucesso pelo usuário no Aura. Os JSONs
+exportados em `docs/results/` foram inspecionados localmente, incluindo a
+ausência de filmes já avaliados e de duplicatas nas duas recomendações.
+
+### Evidência da consulta 01
+
+![Consulta de filmes por gênero no terminal](docs/images/01-filmes-por-genero-terminal.png)
+
+Consulta de filmes do gênero Aventura executada pelo Python contra o Neo4j Aura,
+com os resultados JSON exibidos no terminal.
